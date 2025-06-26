@@ -44,6 +44,53 @@ app.get("/devices", async (req, res) => {
   try {
     const response = await axios.get(
       "https://ztra-bak-xm.xagedemo.com/api/v1/devices",
+
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: token,
+        },
+      }
+    );
+
+    // Send the response back to the client
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ error: "Failed to fetch data from the external API" });
+  }
+});
+app.get("/xeps", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://ztra-bak-xm.xagedemo.com/api/v1/xeps",
+
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: token,
+        },
+      }
+    );
+
+    // Send the response back to the client
+    res.json(response.data);
+  } catch (error) {
+    console.error(error);
+    res
+      .status(500)
+      .json({ error: "Failed to fetch data from the external API" });
+  }
+});
+app.get("/xeps", async (req, res) => {
+  try {
+    const response = await axios.get(
+      "https://ztra-bak-xm.xagedemo.com/api/v1/xeps",
+
       {
         headers: {
           "Content-Type": "application/json",
