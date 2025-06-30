@@ -79,7 +79,7 @@ app.get("/xeps", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello Worldd============!");
+  res.send("Welcome to the ZTRA API Proxy Server!");
 });
 
 app.listen(port, () => {
